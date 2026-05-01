@@ -1,153 +1,144 @@
 # 🚀 Hybrid AI-Based Career Recommendation System
 
-A multi-layered intelligent system that recommends careers based on student skill profiles using a combination of:
-
-- K-Means Clustering (pattern discovery)
-- Collaborative Filtering (similarity-based recommendation)
-- Neural Networks (MLP for prediction)
-- Skill-Fit Validation (real-world feasibility check)
+A multi-layered intelligent system that recommends personalized career paths based on student skill profiles using Machine Learning techniques.
 
 ---
 
-## 📌 Problem Statement
+## 📌 Overview
 
-Students often struggle to choose the right career path due to:
-- Lack of personalized guidance
-- Generic recommendation systems
-- No validation of actual skill readiness
+This project presents a hybrid AI-based system designed to solve the problem of generic and inaccurate career guidance. It uses a combination of clustering, collaborative filtering, and neural networks to generate realistic and data-driven career recommendations.
 
-This project solves that by building a **hybrid AI system** that is both **data-driven and realistic**.
+---
+
+## 🎯 Problem Statement
+
+Students often receive generic career suggestions that do not reflect their individual strengths. Traditional systems fail to provide:
+
+* Personalized recommendations
+* Data-driven insights
+* Realistic skill-based validation
+
+This system addresses these gaps by combining multiple AI techniques.
 
 ---
 
 ## 🧠 System Architecture
 
-The system is designed as a **multi-stage decision pipeline**:
+The system follows a multi-stage pipeline:
 
 1. **Input Layer**
-   - User enters skill scores (0–10):
-     - Math
-     - Creativity
-     - Communication
-     - Technical
-     - Leadership
-   - Selects an interest domain
 
-2. **Clustering (K-Means)**
-   - Groups users into archetypes based on skill patterns
-   - Helps understand *“what type of student you are”*
+   * User provides skill scores (0–10)
+   * Selects interest domain
+
+2. **K-Means Clustering**
+
+   * Groups users into archetypes based on skill similarity
+   * Identifies student profiles
 
 3. **Collaborative Filtering**
-   - Finds similar students using cosine similarity
-   - Recommends careers based on peer patterns
-   - Domain-restricted to avoid irrelevant suggestions
 
-4. **Neural Network (MLP)**
-   - Domain-specific models (not one global model)
-   - Predicts probability of success in each career
-   - Architecture:
-     ```
-     Input (5 features) → Dense(64) → Dense(32) → Output
-     ```
+   * Uses cosine similarity
+   * Recommends careers based on similar users
+
+4. **MLP Neural Network**
+
+   * Domain-specific models
+   * Predicts career success probabilities
 
 5. **Skill-Fit Validation**
-   - Checks if user meets minimum skill thresholds
-   - Flags gaps to ensure realistic recommendations
+
+   * Checks if user meets minimum requirements
+   * Highlights skill gaps
 
 ---
 
 ## 📊 Dataset
 
-- **Type:** Synthetic (generated programmatically)
-- **Size:** 700+ student records
-- **Careers:** 14
-- **Domains:** 7 (AI, Tech, Design, Business, Science, Healthcare, Media)
+* Synthetic dataset of 700+ students
+* 14 career options
+* 7 interest domains
 
-### Why Synthetic Data?
-Real labeled career datasets are not publicly available.  
-Synthetic data allows:
-- Controlled experimentation
-- Clear separation between career profiles
-- Model validation
+Synthetic data was used to ensure controlled testing and avoid bias.
 
 ---
 
 ## ⚙️ Tech Stack
 
-- **Language:** Python
-- **Libraries:**
-  - `numpy`, `pandas`
-  - `scikit-learn`
-  - `matplotlib`
+* Python
+* NumPy
+* Pandas
+* Scikit-learn
+* Matplotlib
 
 ---
 
-## 📈 Machine Learning Components
+## 📈 Machine Learning Techniques
 
-### 1. K-Means Clustering
-- Unsupervised learning
-- Elbow Method used to select optimal K = 7
-- Discovers hidden student archetypes
-
----
-
-### 2. Collaborative Filtering
-- Uses **cosine similarity**
-- Finds top 50 similar profiles
-- Recommends most frequent careers among them
-
----
-
-### 3. Neural Network (MLP)
-- Separate model per domain
-- Prevents cross-domain misclassification
-- Uses:
-  - ReLU activation
-  - Adam optimizer
-  - Early stopping
-
----
-
-### 4. Skill-Fit Gate
-- Validates recommendations against minimum skill thresholds
-- Adds practical realism to predictions
+* K-Means Clustering
+* Collaborative Filtering (Cosine Similarity)
+* Multi-Layer Perceptron (MLP)
 
 ---
 
 ## 📊 Output
 
-For each user, the system provides:
+The system provides:
 
-- 🎯 **Student Archetype** (Cluster)
-- 💼 **Top Career Recommendations**
-- 📉 **Probability Scores (MLP)**
-- ⚠️ **Skill Gap Analysis**
-
----
-
-## 📉 Visualization Dashboard
-
-The system generates a dashboard with:
-
-- Elbow Curve (optimal K selection)
-- PCA Cluster Visualization
-- Career Distribution per Cluster
-- MLP Probability Chart
+* 🎯 Student Archetype
+* 💼 Top Career Recommendations
+* 📉 Probability Scores
+* ⚠️ Skill Gap Analysis
 
 ---
 
-## 🧪 Example Input
+## 📸 Screenshots
 
-| Skill         | Score |
-|--------------|------|
-| Math         | 9    |
-| Creativity   | 4    |
-| Communication| 4    |
-| Technical    | 9    |
-| Leadership   | 3    |
+### Output
 
-**Expected Output:**
-- AI/ML Engineer (High Confidence)
-- Data Scientist
+![Output](screenshots/output.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 💡 Key Insight
+
+Unlike traditional systems, this model combines multiple ML techniques to balance accuracy, interpretability, and real-world feasibility.
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repository
+2. Install dependencies:
+
+   ```
+   pip install -r requirements.txt
+   ```
+3. Run the program:
+
+   ```
+   python code/career_recommendation_system.py
+   ```
+
+---
+
+## 👩‍💻 My Contribution
+
+* Designed system architecture
+* Implemented ML pipeline
+* Developed recommendation logic
+* Performed data preprocessing and model training
+
+---
+
+## 🔮 Future Scope
+
+* Real-world dataset integration
+* Web-based interface
+* AI-driven feedback system
 
 ---
